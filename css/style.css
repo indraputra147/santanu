@@ -86,6 +86,11 @@ th.mid-table {
     margin-left: 5px;
 }
 
+.form-control {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
 /* Footer */
 .footer {
     font-size: 75%;
