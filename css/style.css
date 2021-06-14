@@ -38,9 +38,14 @@ body{
 }
 
 /* Navbar */
+.nav-link {
+    margin-left: 10px;
+}
+
 .nav-link:hover {
     border-bottom: solid 3px black;
     margin: 0;
+    margin-left: 10px;
     margin-bottom: -3px;
 }
 
@@ -67,12 +72,21 @@ th.mid-table {
     border-left:1px solid rgb(209, 206, 206);
 }
 
-.bi {
-    color: white;
+.table-link-terkait {
+    font-family: 'Segoe UI';
+}
+
+.bi1 {
+    color: black;
+}
+
+.bi2 {
+    color:white;
     margin-right: 5px;
     margin-left: 5px;
 }
 
+/* Footer */
 .footer {
     font-size: 75%;
     left: 0;
@@ -84,8 +98,5 @@ th.mid-table {
   }
 
 /* Desktop Version */
-/* @media (min-width: 992px) {
-    .search_form {
-        width: 100%;
-    }
-} */
+@media (min-width: 992px) {
+}
