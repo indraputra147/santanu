@@ -44,9 +44,48 @@ body{
     margin-bottom: -3px;
 }
 
-/* Desktop Version */
-@media (min-width: 992px) {
-    .search_form {
-        width: 100% !important;
-    }
+/* Content */
+.table-title {
+    background: #0052A9;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
 }
+
+.myset {
+    background-color: #696666;
+    color: white;
+    font-family: 'Segoe UI';
+    bottom: 18px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 0;
+}
+
+th.mid-table {
+    border-left:1px solid rgb(209, 206, 206);
+}
+
+.bi {
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.footer {
+    font-size: 75%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+  }
+
+/* Desktop Version */
+/* @media (min-width: 992px) {
+    .search_form {
+        width: 100%;
+    }
+} */
