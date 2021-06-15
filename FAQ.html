@@ -55,7 +55,7 @@
               <a class="nav-link" href="status.html">Status</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="data.html">Data</a>
+              <a class="nav-link" href="data_req.html">Data</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="FAQ.html">FAQ</a>
@@ -73,9 +73,9 @@
 
     <!-- content -->
     <div class="container">
-      <div class="row col-md-12 mt-3 mb-3">
+      <div class="mt-3 mb-3">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" style="text-align: center;">
             Tentang Balai Pengamatan Antariksa dan Sumedang
           </div>
           <div class="card-body">
@@ -85,7 +85,7 @@
               <li>penyusunan rencana kegiatan dan anggara</li>
               <li>pelaksanaan pengamatan, perekaman, pengolahan, analisis, dan pengelolaan data antariksa dan atmosfer</li>
               <li>pengembangan, pengoperasian, dan pemeliharaan peralatan pengamatan antariksa dan atmosfer</li>
-              <li>pelaksanaan kerja sama teknis di bidang pengamatan antariksa dan atmosfe</li>
+              <li>pelaksanaan kerja sama teknis di bidang pengamatan antariksa dan atmosfer</li>
               <li>pemberian layanan publik antariksa dan atmosfer</li>
               <li>evaluasi dan penyusunan laporan kegiatan</li>
               <li>pelaksanaan urusan keuangan, sumber daya manusia aparatur, tata usaha, penatausahaan barang milik negara, dan rumah tangga</li>
@@ -97,18 +97,92 @@
     </div>
 
     <div class="container">
-      <div class="row col-md-12 mt-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Pertanyaan yang sering diajukan (FAQ)
+      <div class="mb-3 mt-5 justify-content-center">
+        <p style="font-weight: bold; text-align: center;">PERTANYAAN YANG SERING DIAJUKAN (FAQ)</p>
+        <div id="accordion">
+          <div class="card" style="width: 100%;">
+              <div class="card-header" id="headingOne" style="font-weight:bold;">
+                <h5 class="mb-0">
+                <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Apa yang dimaksud dengan SANTANU?
+                </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                <p style="text-align: justify;">
+                  Sistem Pemantau Hujan (SANTANU) adalah sistem yang memantau hujan memanfaatkan noise dari radar kapal, yang selanjutnya dijadikan pemantauan hujan skala lokal. Prinsip kerja SANTANU adalah mengubah sinyal gangguan (noise) dari beberapa objek seperti tetes hujan (drop), dan bongkahan es (hail) dalam suatu volume awan yang diterima oleh radar kapal menjadi suatu parameter terukur. Sistem SANTANU selanjutnya mengolah parameter-parameter (fasa, ampllitudo, dan frekuensi sinyal) tersebut dan diinterpretasikan menjadi informasi kondisi hujan seperti nilai reflektivitas hujan, lokasi hujan, luasan hujan, intensitas hujan, serta analisa pergerakan hujan.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="card-body collapse">
-            <p style="font-weight:bold;">Apa yang dimaksud dengan SANTANU?<p>
-            <p>
-               Sistem Pemantau Hujan (SANTANU) adalah sistem yang memantau hujan memanfaatkan noise dari radar kapal, yang selanjutnya dijadikan pemantauan hujan skala lokal. Prinsip kerja SANTANU adalah mengubah sinyal gangguan (noise) dari beberapa objek seperti tetes hujan (drop), dan bongkahan es (hail) dalam suatu volume awan yang diterima oleh radar kapal menjadi suatu parameter terukur. Sistem SANTANU selanjutnya mengolah parameter-parameter (fasa, ampllitudo, dan frekuensi sinyal) tersebut dan diinterpretasikan menjadi informasi kondisi hujan seperti nilai reflektivitas hujan, lokasi hujan, luasan hujan, intensitas hujan, serta analisa pergerakan hujan.
-            </p>
+
+          <div class="card" style="width: 100%;">
+            <div class="card-header" id="headingTwo" style="font-weight:bold;">
+              <h5 class="mb-0">
+              <button class="btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              Bagaimana cara mendapatkan data SANTANU
+              </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+              <p>
+                Untuk memperoleh data SANTANU, pengguna dapat melakukan permohonan dengan mengisi form yang ada di halaman Data. Setelah mengisi form secara lengkap, pengguna akan memperoleh konfirmasi melalui email dan link untuk mengunduh file yang diajukan.
+              </p>
+            </div>
           </div>
         </div>
+
+        <div class="card" style="width: 100%;">
+          <div class="card-header" id="headingThree" style="font-weight:bold">
+            <h5 class="mb-0">
+              <button class="btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+              Bagaimana cara menggunakan fitur timelapse di halaman quicklook?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse show" data-parent="#accordion">
+          <div class="card-body">
+            <ol>
+              <li>Buka Halaman Quicklook</li>
+              <li>Pilih Jenis Radar</li>
+              <li>Pilih Tanggal dan Waktu Radar</li>
+              <li>Pilih Lama animasi Timelapse</li>
+              <li>Klik Mulai untuk menjalankan animasi</li>
+            </ol>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Pertanyaan -->
+    <div class="container">
+      <div class="mb-3">
+      <div class="card">
+        <div class="card-header">
+          Ajukan Pertanyaan
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nama-lengkap">Nama Lengkap</label>
+              <input type="text" class="form-control" id="nama-lengkap" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="pertanyaan">Pertanyaan</label>
+              <textarea class="form-control" id="pertanyaan" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Selesai</button>
+          </form>
+        </div>
+      </div>
       </div>
     </div>
 

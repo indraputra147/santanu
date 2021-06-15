@@ -42,10 +42,10 @@ body{
     margin-left: 10px;
 }
 
-.nav-link:hover {
-    border-bottom: solid 3px black;
-    margin: 0;
-    margin-left: 10px;
+.nav-link:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid rgb(112, 110, 110);
     margin-bottom: -3px;
 }
 
