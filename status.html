@@ -76,14 +76,13 @@
 
     <!-- content -->
     <div class="container">
-      <div class="row col-md-12">
-        <div class="col-md-8">
-          <table class="table table-title">
-          <tr> 
-            <th><i class="bi bi-info-circle"> </i>Spesifikasi dan Status Radar SANTANU</th>
-          </tr>
-          </table>
-          <table class="table table-light">
+      <div class="row col-md-12 justify-content-center">
+        <div class="col-md-8 mt-4 mb-4">
+          <div class="card" style="font-family: 'Segoe UI';">
+            <div class="card-header" style="font-weight: bold;">
+              <i class="bi bi-info-circle"> </i>Spesifikasi dan Status Radar SANTANU 
+            </div>
+          <table class="table table-sm table-light my-table">
             <tbody>
               <tr>
                 <th scope="row">Merk</th>
@@ -133,21 +132,48 @@
                 <th class="mid-table">Echo Level</th>
                 <td>: -100 dBm</t>
               </tr>
+              <tr>
+                <th scope="row">Trigger Frequency</th>
+                <td>: 500 Hz</td>
+                <th class="mid-table">Gyro</th>
+                <td>: ---</t>
+              </tr>
+              <tr>
+                <th scope="row">Koordinat</th>
+                <td>: 107.84&deg; BT 6.91&deg; LS</td>
+                <th class="mid-table">Temperature</th>
+                <td>: OK 443</t>
+              </tr>
+              <tr>
+                <th scope="row">Versi Aplikasi</th>
+                <td>: 0359246-03.11</td>
+                <th class="mid-table">Versi FPGA</th>
+                <td>: 0359247-03.02</t>
+              </tr>
+              <tr>
+                <th scope="row">Total On Time</th>
+                <td>: 030996.9 H</td>
+                <th class="mid-table">Total TX Time</th>
+                <td>: 012519.7 H</t>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div class="col-md-1 vl"></div>
-        <div class="col-md-3">
-          <table class="table table-borderless table-title table-responsive-lg">
-            <tr> 
-              <th><i class="bi bi-exclamation-octagon"> </i> Event Log</th>
-            </tr>
-          </table>
-          <table class="table table-light text-center">
-            <tr style="height: 350px;"> 
+        </div>
+        <div class="col-md-3 mt-4 mb-4">
+          <div class="card" style="height: 419px;">
+            <div class="card-header" style="font-weight: bold;">
+              <i class="bi bi-exclamation-octagon"> </i> Event Log
+            </div>
+          <table class="table table-light">
+            <tr style="font-size: 12px;"> 
               <td>[26-04-2021 08:45 WIB]<br>Koneksi Internet Sudah Diperbaiki</td>
             </tr>
+            <tr style="font-size: 12px;"> 
+              <td>[25-04-2021 17:28 WIB]<br>Koneksi Internet Gedung Orion Terputus</td>
+            </tr>
           </table>
+          </div>
         </div>
       </div>
     </div>

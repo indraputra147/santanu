@@ -49,13 +49,20 @@ body{
     margin-bottom: -3px;
 }
 
+/* Vertical Line */
+.vl {
+    border-right: 1px solid gray;
+    height: 320px;
+    margin-top: 25px;
+  }
+
 /* Content */
-.table-title {
+/* .table-title {
     background: #0052A9;
     border-radius: 10px;
     color: white;
     margin-top: 20px;
-}
+} */
 
 .myset {
     background-color: #696666;
@@ -74,6 +81,10 @@ th.mid-table {
 
 .table-link-terkait {
     font-family: 'Segoe UI';
+}
+
+.my-table th {
+    padding-left: 20px;
 }
 
 .bi1 {
