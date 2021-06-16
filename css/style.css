@@ -7,7 +7,7 @@ body{
 .search_form {
     width: 100%;
     position: relative;
-    display: flex;
+    display: none;
 }
 
 .searchTerm {
@@ -104,4 +104,9 @@ th.mid-table {
 
 /* Desktop Version */
 @media (min-width: 992px) {
+    .search_form {
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
 }

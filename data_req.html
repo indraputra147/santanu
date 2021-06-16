@@ -65,22 +65,28 @@
             </li>
           </ul>
         </div>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto pr-3">
                 <li class="nav-item active">
                     <a class="btn btn-outline-info" href="login.html">Login</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </nav>
 
 <!-- content -->
 <!-- Form Pertanyaan -->
 <div class="container">
   <div class="col-md-9 mb-4 mt-4 ml-auto mr-auto">
+    <div class="alert alert-success alert-dismissible fade show my-alert d-none" role="alert">
+      <strong>Permohonan Anda Telah Terkirim!</strong> Silakan tunggu konfirmasi selanjutnya melalui email.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <div class="card mb-4">
       <div class="card-body">
-        Untuk mengajukan permohonan data SANTANU, silakan isi form di bawah ini
+        Untuk mengajukan permohonan data SANTANU, silakan isi form di bawah ini.
       </div>
     </div>
   <div class="card">
@@ -88,59 +94,63 @@
       Form Permohonan Informasi Publik
     </div>
     <div class="card-body">
-      <form name>
+      <form name="form-pengajuan">
         <div class="form-group">
           <label for="nama-lengkap">Nama Lengkap</label>
-          <input type="text" class="form-control" id="nama-lengkap" placeholder="Nama Lengkap">
+          <input type="text" class="form-control" id="nama-lengkap" placeholder="Nama Lengkap" name="nama">
         </div>
         <div class="form-group">
           <label for="jenis-identitas">Jenis Identitas</label>
-          <select class="form-control" id="jenis-identitas">
+          <select class="form-control" id="jenis-identitas" name="jenis-id">
             <option>KTP</option>
             <option>Kartu Pelajar</option>
           </select>
         </div>
         <div class="form-group">
           <label for="nomor-id">Nomor Identitas</label>
-          <input type="text" class="form-control" id="nomor-id" placeholder="Nomor Identitas">
+          <input type="number" class="form-control" id="nomor-id" placeholder="Nomor Identitas" name="nomor-id">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
         </div>
         <div class="form-group">
           <label for="telepon">Nomor Telepon / HP</label>
-          <input type="email" class="form-control" id="nomor-telepon" placeholder="Nomor Telepon">
+          <input type="number" class="form-control" id="nomor-telepon" placeholder="Nomor Telepon" name="no-telepon">
         </div>
         <div class="form-group">
           <label for="alamat">Alamat</label>
-          <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat Lengkap"></textarea>
+          <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat Lengkap" name="alamat"></textarea>
         </div>
         <div class="form-row mb-3">
           <div class="col">
             <label for="tanggal-mulai">Tanggal Mulai</label>
-            <input type="date" class="form-control" id="tanggal-mulai">
+            <input type="date" class="form-control" id="tanggal-mulai" name="tanggal-mulai">
           </div>
           <div class="col">
             <label for="waktu-mulai">Waktu Mulai</label>
-            <input type="time" class="form-control" id="waktu-mulai">
+            <input type="time" class="form-control" id="waktu-mulai" name="waktu-mulai">
           </div>
         </div>
         <div class="form-row mb-3">
           <div class="col">
             <label for="tanggal-selesai">Tanggal Selesai</label>
-            <input type="date" class="form-control" id="tanggal-selesai">
+            <input type="date" class="form-control" id="tanggal-selesai" name="tanggal-selesai">
           </div>
           <div class="col">
             <label for="waktu-selesai">Waktu Mulai</label>
-            <input type="time" class="form-control" id="waktu-selesai">
+            <input type="time" class="form-control" id="waktu-selesai" name="waktu-selesai">
           </div>
         </div>
         <div class="form-group">
           <label for="tujuan">Tujuan Penggunaan Data</label>
-          <textarea class="form-control" id="tujuan" rows="1" placeholder="Contoh: Penelitian Atmosfer"></textarea>
+          <textarea class="form-control" id="tujuan" rows="1" placeholder="Contoh: Penelitian Atmosfer" name="tujuan"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-kirim">Submit</button>
+        <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          Mengirim...
+        </button>
       </form>
     </div>
   </div>
@@ -197,14 +207,29 @@
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzrs29ZLbMY7qvVLG8bxhHpZhKexgcQF_6RUGZGfc1BATiZgOJUfQnSH-9Ut6upfwf1Vw/exec'
-      const form = document.forms['submit-to-google-sheet']
+      const form = document.forms['form-pengajuan']
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
     
       form.addEventListener('submit', e => {
         e.preventDefault()
+        
+        // Saat tombol submit diklik
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        myAlert.classList.toggle('d-none');
+
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
+          .then((response) => {
+            // selesai di klik
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            form.reset();
+            console.log('Success!', response);
+          })
           .catch(error => console.error('Error!', error.message))
-      })
+      });
     </script>
 
   </body>
