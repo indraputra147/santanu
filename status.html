@@ -28,14 +28,15 @@
             </a>
         </div>
         <div class="col-md-3 col-sm-12 d-flex flex-row-reverse bd-highlight">
-            <form class="form-inline inputku">
-                <div class="search_form">
-                    <input type="text" class="searchTerm" placeholder="Pencarian" style="color:gray;font-size:10pt">
-                    <button type="submit" class="searchButton">
-                        <i class="bi bi-search"></i>
-                </button>
-                </div>
-            </form>
+          <form class="form-inline" action="https://www.google.com/search" id="searchform" method="get" target="_blank">
+            <div class="search_form">
+                <input aria-label="Pencarian" type="text" class="searchTerm" autocomplete="off" name="q" placeholder="Pencarian" style="color:gray;font-size:10pt" required="required" value="" />
+                <input name="as_sitesearch" type="hidden" value="google.com" />
+                <button type="submit" class="searchButton">
+                    <i class="bi bi-search"></i>
+            </button>
+            </div>
+          </form>
         </div>
     </nav>
 
