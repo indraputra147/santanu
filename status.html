@@ -153,9 +153,9 @@
               </tr>
               <tr>
                 <th scope="row">Total On Time</th>
-                <td>: <span id="detik"></span></td>
+                <td>: <span id="detik"></span> Jam</td>
                 <th class="mid-table">Total TX Time</th>
-                <td>: 012519.7 H</t>
+                <td>: 012519.7 Jam</t>
               </tr>
             </tbody>
           </table>
@@ -241,7 +241,7 @@
 
       function increment() {
         elapsedTime = Date.now() - sessionStamp;
-        document.getElementById('detik').textContent = Math.round(elapsedTime / 3600000).toString();
+        document.getElementById('detik').textContent = ((elapsedTime / 1000) / 3600).toFixed(1);
       }
 
       setInterval(increment, 1000);
