@@ -23,7 +23,7 @@
     <!-- Navbar 1 -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="col-md-9 col-sm-12 d-flex flex-row-reverse"></div>
-            <a class="navbar-brand" href="http://lapan.go.id">
+            <a class="navbar-brand" href="http://lapan.go.id" target="_blank">
             <img src="img/logo-lapan1.png" width="400" height="32" alt="logo-lapan">
             </a>
         </div>
@@ -153,7 +153,7 @@
               </tr>
               <tr>
                 <th scope="row">Total On Time</th>
-                <td>: 030996.9 H</td>
+                <td>: <span id="detik"></span></td>
                 <th class="mid-table">Total TX Time</th>
                 <td>: 012519.7 H</t>
               </tr>
@@ -226,5 +226,25 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     -->
+
+    <script>
+    var timeStamp = Date.now(),
+          sessionStamp = sessionStorage.getItem('ts'),
+          elapsedTime;
+      if (!sessionStamp) {
+        sessionStorage.setItem('ts', timeStamp.toString());
+        sessionStamp = timeStamp;
+      }
+      else {
+        sessionStamp = parseInt(sessionStamp);
+      }
+
+      function increment() {
+        elapsedTime = Date.now() - sessionStamp;
+        document.getElementById('detik').textContent = Math.round(elapsedTime / 3600000).toString();
+      }
+
+      setInterval(increment, 1000);
+    </script>
   </body>
 </html>
